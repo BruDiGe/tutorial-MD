@@ -1,0 +1,19 @@
+source leaprc.protein.ff19SB
+source leaprc.gaff2
+source leaprc.water.tip3p
+loadAmberParams ./GSSH-A/GSSH-A.frcmod
+loadAmberPrep ./GSSH-A/GSSH-A.prepi
+loadAmberParams ./GSSH-B/GSSH-B.frcmod
+loadAmberPrep ./GSSH-B/GSSH-B.prepi
+sys1 = loadpdb 6GGI-A_H.pdb
+sys2 = loadpdb WAT-A.pdb
+sys = sequence { sys1 sys2 }
+savePDB sys 6GGI_leap.pdb
+mol = loadpdb 6GGI_leap.pdb
+addions2 mol K+ 10
+addions2 mol Na+ 0
+addions2 mol Cl- 0
+solvateOct mol TIP3PBOX 12.0
+saveamberparm mol 6GGI-A.prmtop 6GGI-A.inpcrd
+savePDB mol 6GGI-A-solv_leap.pdb
+quit
