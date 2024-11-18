@@ -1,1 +1,6 @@
+List of PDBs:
 
+* 6GGI-A_H.pdb (protein)
+* GSSH-A.pdb (substrate)
+* WAT-A.pdb (water molecules, yes cristallographic waters are important)
+* MG-A.pdb (magnesium ion)
