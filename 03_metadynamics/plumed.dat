@@ -38,7 +38,7 @@ beta_cent: CONSTANT VALUES=1.5                                 # STEEPNESS
 wall_width: CONSTANT VALUES=0.60                                # WIDTH (h)
 wall_buffer: CONSTANT VALUES=0.15                               # BUFFER (f, total width = WIDTH + BUFFER)
 lwall: LOWER_WALLS ARG=pp.proj AT=0.5 KAPPA=20000.0 EXP=2 EPS=1 # Lower Wall (the starting point of the funnel)
-uwall: UPPER_WALLS ARG=pp.proj AT=4.0 KAPPA=20000.0 EXP=2 EPS=1 # Upper Wall (the ending point of the funnel)
+uwall: UPPER_WALLS ARG=pp.proj AT=3.5 KAPPA=20000.0 EXP=2 EPS=1 # Upper Wall (the ending point of the funnel)
 
 ##################################
 ###########CALCULATE FUNNEL#######
@@ -79,10 +79,10 @@ finalbias: BIASVALUE ARG=wall_bias
 ###############################
 METAD ...
         LABEL=meta ARG=pp.proj,pp.ext 
-        SIGMA=0.025,0.03 HEIGHT=4.0 
+        SIGMA=0.025,0.03 HEIGHT=2.0 
         PACE=2000 FILE=HILLS 
         GRID_MIN=0.0,0.0 GRID_MAX=4.5,0.9 GRID_SPACING=0.005,0.06
-        BIASFACTOR=80.0 TEMP=300
+        BIASFACTOR=40.0 TEMP=300
 ... METAD
 
 ###############################
